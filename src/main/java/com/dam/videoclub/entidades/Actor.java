@@ -37,7 +37,7 @@ public class Actor implements Serializable {
 	@Column(name = "Nacionalidad", nullable = false)
 	private String nacionalidad;
 	
-	@ManyToMany(mappedBy = "actor")
+	@ManyToMany(mappedBy = "actores")
 	private List<Pelicula> peliculas;
 	
 }
