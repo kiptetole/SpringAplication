@@ -12,6 +12,9 @@ import javax.validation.constraints.Size;
 @Table(name = "actor")
 public class Actor implements Serializable {
 	
+	/** SERIAL ID */
+	private static final long serialVersionUID = 1L;
+	
 	/** Identificador del actor/actriz (PK) */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,5 +1,6 @@
 package com.dam.videoclub.entidades;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
@@ -18,8 +19,11 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 @Entity
 @Table(name = "pelicula")
-public class Pelicula {
-
+public class Pelicula implements Serializable {
+	
+	/** SERIAL ID */
+	private static final long serialVersionUID = 1L;
+	
 	/** Identificador de Pelicula (PK) */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
