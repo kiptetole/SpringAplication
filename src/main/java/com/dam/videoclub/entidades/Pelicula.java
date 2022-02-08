@@ -28,20 +28,20 @@ public class Pelicula {
 	/** Titulo de la pelicula */
 	@NotEmpty(message="El tiulo de la pelicula no puede estar vacio")
 	@Size(min=1, max=200, message="No se ha introducido el Titulo correctamente" )
-	@Column(name = "Nombre", nullable = false)
-	private String nombre;
+	@Column(name = "Titulo", nullable = false)
+	private String titulo;
 	
 	/** Año de la pelicula */
 	@NotEmpty(message="El año de estreno de la pelicula no puede estar vacio")
 	@NotNull(message="Tiene que introducir la fecha de estreno")
 	@Column(name = "Fecha_Estreno", nullable = false)
-	private Date Anno_Estreno;
+	private Date annoEstreno;
 	
 	/** Duracion de la pelicula */
 	@NotEmpty(message="La duracion de la pelicula no puede estar vacio")
 	@Size(min=1, max=4, message="No se ha introducido la duracion de la pelicula" )
 	@Column(name = "Min_Duracion", nullable = false)
-	private int min_duracion;
+	private int minDuracion;
 	
 	/** Resumen de la pelicula */
 	@Size(min=1, max=20, message="No se ha introducido la nacionalidad correctamente" )

@@ -30,7 +30,7 @@ public class Actor implements Serializable {
 	/** Fecha de nacimiento del actor/actriz */
 	@NotNull(message="Tiene que introducir la fecha de nacimiento")
 	@Column(name = "Fecha_nacimiento", nullable = false)
-	private Date fech_nacimiento;
+	private Date fechNacimiento;
 	
 	/** Nacionalidad del actor/actriz */
 	@Size(min=1, max=20, message="No se ha introducido la nacionalidad correctamente" )
