@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import com.dam.videoclub.entidades.Actor;
+import com.dam.videoclub.entidades.Pelicula;
 
 @Repository
 public interface ActorRepositorioI extends JpaRepository<Actor, Long>{
+	
+	Actor findByid(long id);
 	
 	List<Actor> findByNombre(String nombre);
 	
@@ -21,4 +24,5 @@ public interface ActorRepositorioI extends JpaRepository<Actor, Long>{
 	
 	List<Actor> findByNacionalidad(String nacionalidad);
 	
+	List<Pelicula> findByPeliculas(long id);
 }

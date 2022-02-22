@@ -17,8 +17,13 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "pelicula")
+@Data @AllArgsConstructor @NoArgsConstructor
 public class Pelicula implements Serializable {
 	
 	/** SERIAL ID */
@@ -61,4 +66,9 @@ public class Pelicula implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
     public List<Actor> actores;
+	
+	@Override
+	public String toString() {
+		return "Pelicula [id=" + id + ", Titulo: " + titulo + ", Año de estreno: " + annoEstreno + ", Duracion de la pelicula=" + minDuracion + ", Resumen:\n" + resumen + "]";
+	}
 }
