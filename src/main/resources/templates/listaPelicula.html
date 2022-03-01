@@ -3,11 +3,14 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>VideoClub</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<links th:replace="links"/>
 	</head>
-	<body class="card-body">
-		<div class="card text-white bg-primary mb-3">
+	<body>
+		<!-- Navbar de navegacion entre las diferentes secciones -->
+		<div th:replace="navbar :: header"/>
+	
+		<!-- Tabla donde se muetran todos los Peliculas -->
+		<div class="text-white bg-primary mb-3 container-fluid">
 		  	<div class="card-header">Peliculas</div>
 			<div class="card-body">
 				<table class="table table-striped table-dark">
@@ -19,6 +22,7 @@
 							<th scope="col">Duracion(min)</th>
 							<th scope="col">Resumen</th>
 							<th scope="col" th:hidden="${btnDropPeliculaEnabled}">Eliminar</th>
+							<th scope="col">Actualizar</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -33,14 +37,21 @@
 									<form action="removePelicula" method="post">
 										<button th:disabled="${btnDropPeliculaEnabled}" type="submit"
 											id="btnDropPelicula" name="peliculaId" th:value="${pelicula.id}"
-											class="btn btn-danger">❌</button>
+											class="btn btn-light">❌</button>
+									</form>
+								</td>
+								<td>
+									<form action="antesUpdatePelicula" method="post">
+										<button th:disabled="${btnDropPeliculaEnabled}" type="submit"
+											id="btnUpdatePelicula" name="peliculaId" th:value="${pelicula.id}"
+											class="btn btn-light">♻</button>
 									</form>
 								</td>
 							</tr>
 						</th:block>
 					</tbody>
 				</table>
-				<a class="btn btn-primary" th:href="@{index}" id="aBtnReturn" role="button">Volver</a>
+				<a class="btn btn-danger" th:href="@{index}" id="aBtnReturn" role="button">Volver</a>
 			</div>
 		</div>
 	</body>

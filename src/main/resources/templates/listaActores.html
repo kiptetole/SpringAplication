@@ -3,11 +3,14 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>VideoClub</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<links th:replace="links"/>
 	</head>
-	<body class="card-body">
-		<div class="card text-white bg-warning mb-3">
+	<body>
+		<!-- Navbar de navegacion entre las diferentes secciones -->
+		<div th:replace="navbar :: header"/>
+	
+		<!-- Tabla donde se muetran todos los Actores -->
+		<div class="text-white bg-danger mb-3 container-fluid">
 		  	<div class="card-header">Actores</div>
 			<div class="card-body">
 				<table class="table table-striped table-dark">
@@ -19,6 +22,7 @@
 							<th scope="col">Fecha Nacimiento</th>
 							<th scope="col">Nacionalidad</th>
 							<th scope="col" th:hidden="${btnDropActorEnabled}">Eliminar</th>
+							<th scope="col" th:hidden="${btnDropActorEnabled}">Actualizar</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -33,7 +37,14 @@
 									<form action="removeActor" method="post">
 										<button th:disabled="${btnDropActorEnabled}" type="submit"
 											id="btnDropActor" name="ActorId" th:value="${actor.id}"
-											class="btn btn-danger">❌</button>
+											class="btn btn-light">❌</button>
+									</form>
+								</td>
+								<td>
+									<form action="antesUpdateActor" method="post">
+										<button th:disabled="${btnDropActorEnabled}" type="submit"
+											id="btnUpdateActor" name="ActorId" th:value="${actor.id}"
+											class="btn btn-light">♻</button>
 									</form>
 								</td>
 							</tr>

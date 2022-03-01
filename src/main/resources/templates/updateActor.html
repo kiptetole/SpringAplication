@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>VideoClub</title>
+		<links th:replace="links"/>
+	</head>
+	<body>
+		<!-- Navbar de navegacion entre las diferentes secciones -->
+		<div th:replace="navbar :: header"/>
+		
+		<div class="card text-white bg-dark mb-3">
+		  <div class="card-header">Cambiar datos del Actor</div>
+		  	<div class="card-body">
+				<form th:action="@{/updateActor}" th:object="${updateActor}" method="POST">
+					<input type="text" name="id" hidden th:value="${actor.id}"/>
+					<div class="form-group">
+			  			<label for="inpActNombre">Nombre</label>
+			  			<input type="text" required="required" class="form-control form-control-lg" id="inpActNombre" name="nombre" placeholder="Nombre Completo." th:value="${actor.nombre}">
+					</div>
+					<hr class="bg-light"/>
+					<div class="form-group">
+			  			<label for="inpActApellidos">Apellidos</label>
+			  			<input type="text" required="required" class="form-control form-control-lg" id="inpActApellidos" name="apellidos" placeholder="Apellidos." th:value="${actor.apellidos}">
+					</div>
+					<hr class="bg-light"/>
+					<div class="form-group">
+			  			<label for="inpActFechaNacimiento">Fecha</label>
+			  			<input type="date" id="start" name="fechNacimiento" th:value="${actor.fechNacimiento}">
+					</div>
+					<hr class="bg-light"/>
+					<div class="form-group">
+			  			<label for="inpActNacionalidad">Nacionalidad</label>
+			  			<input type="text" required="required" class="form-control form-control-lg" id="inpActNacionalidad" name="nacionalidad" placeholder="Nacionalidad." th:value="${actor.nacionalidad}">
+					</div>
+					<hr class="bg-light"/>
+					<button type="submit" name="btnUpdateActor" class="btn btn-success">Cambiar</button>
+					<a class="btn btn-primary" href="listaActores" role="button" id="aBtnReturn">Volver</a>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

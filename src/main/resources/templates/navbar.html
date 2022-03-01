@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top" th:fragment="header">
+	<a class="navbar-brand" th:href="@{/Index}">Home</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  	</button>
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown active">
+		      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+		        Actores
+		      </a>
+		      <div class="dropdown-menu">
+		        <a class="dropdown-item" th:href="@{/ListaActores}">Lista Actores</a>
+		        <a class="dropdown-item" th:href="@{/AddActor}">Agregar actor</a>
+		      </div>
+		    </li>
+			<li class="nav-item dropdown active">
+		      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+		        Peliculas
+		      </a>
+		      <div class="dropdown-menu">
+		        <a class="dropdown-item" th:href="@{/ListaPelicula}">Lista Pelicula</a>
+		        <a class="dropdown-item" th:href="@{/AddPelicula}">Agregar Pelicula</a>
+		      </div>
+		    </li>
+		</ul>
+	</div>
+</nav>
