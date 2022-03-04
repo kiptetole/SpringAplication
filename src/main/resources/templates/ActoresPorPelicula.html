@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>VideoClub</title>
+		<links th:replace="links"/>
+	</head>
+	<body>
+		<!-- Navbar de navegacion entre las diferentes secciones -->
+		<div th:replace="navbar :: header"/>
+		
+		<div class="card text-white bg-dark mb-3">
+		  	<div class="card-header">
+				<form th:action="@{/actoresPorPelicula}" th:object="${peliculaBusqueda}" method="POST">
+			  		<label for="actores">Selecciona una pelicula:</label>
+				  	<div class="form-group">
+			  			<label for="inpActor">Titulo</label>
+						<select class="form-control" name="pelicula">
+							<option th:each="pelicula : ${listaPeliculas}" th:value="${pelicula.id}" th:utext="${pelicula.titulo}"></option>
+						</select>
+					</div>
+			  		<button type="submit" name="PeliculaId" class="btn btn-success">Buscar Peliculas</button>
+					<a class="btn btn-primary" th:href="@{index}" id="aBtnReturn" role="button">Volver</a>
+				</form>
+		  	</div>
+		</div>
+		
+	</body>
+</html>

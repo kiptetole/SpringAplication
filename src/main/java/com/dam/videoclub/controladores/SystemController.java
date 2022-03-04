@@ -14,6 +14,9 @@ public class SystemController {
 		return "index";
 	}
 	
+	/**
+	 * Redirecciones al controlador de Actores
+	 */
 	/*Redirecciones al controlador de Actores*/
 	@GetMapping("/ListaActores")
 	public String redirectToActorDealershipController() {
@@ -26,6 +29,9 @@ public class SystemController {
 		return "addActor";
 	}
 	
+	/**
+	 * Redirecciones al controlador de Peliculas
+	 */
 	/*Redirecciones al controlador de Peliculas*/
 	@GetMapping("/ListaPelicula")
 	public String redirectToPeliculaDealershipController() {
@@ -36,5 +42,27 @@ public class SystemController {
 	@GetMapping("/AddPelicula")
 	public String redirectToNewPeliculaTemplate() {
 		return "addPelicula";
+	}
+	
+	/**
+	 * Redirecciones al controlador de ActorPelicula
+	 */
+	
+	//Vista que crea una relacion entre un actor y una pelicula
+	@GetMapping("/formularioActorPelicula")
+	public String redirectToNewActorPelicula() {
+		return "redirect:FormularioActorPelicula";
+	}
+			
+	//Muestra la lista de peliculas por actor
+	@GetMapping("/listaPeliculaPorActor")
+	public String redirectToSearchByActor() {
+		return "redirect:BusquedaPeliculasPorActor";
+	}
+			
+	//Muestra la lista de actores por Pelicula
+	@GetMapping("/listaActoresPorPelicula")
+	public String redirectToSearchByPelicula() {
+		return "redirect:BusquedaActoresPorPeliculas";
 	}
 }

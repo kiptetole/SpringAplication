@@ -4,17 +4,54 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>VideoClub</title>
 		<links th:replace="links"/>
+		<style>
+		  .carousel-inner img {
+		    width: 100%;
+		    height: 100%;
+		  }
+  		</style>
 	</head>
 	<body>
 		<!-- Navbar de navegacion entre las diferentes secciones -->
 		<div th:replace="navbar :: header"/>
 		
-		<div class="text-white bg-warning container-fluid">
-		  	<div class="card-body">
-				<h3>Pagina web en Proceso.</h3>
-				<h4>Gracias por la espera 😀</h4>
-			</div>
+		<div class="jumbotron text-center" style="margin-bottom:0">
+		  <h1>Videoclub de Aficionados al Cine</h1>
+		  <p>Busca Informacion respecto a tus actores favoritos y sus respectivas filmografias</p> 
 		</div>
-		
+		<div class="container mt-3">
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ul class="carousel-indicators">
+	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	    <li data-target="#myCarousel" data-slide-to="1"></li>
+	    <li data-target="#myCarousel" data-slide-to="2"></li>
+	  </ul>
+	  
+	  <!-- The slideshow -->
+	  <div class="carousel-inner">
+	    <div class="carousel-item active">
+	      <img src="https://www.caracteristicas.co/wp-content/uploads/2019/02/cine-5-e1585960007845.jpg" alt="Los Angeles" width="1100" height="500">
+	    </div>
+	    <div class="carousel-item">
+	      <img src="https://i0.wp.com/hipertextual.com/wp-content/uploads/2019/12/hipertextual-2010-decada-que-cine-dio-todo-perdio-todo-2019328882.jpg" alt="Chicago" width="1100" height="500">
+	    </div>
+	    <div class="carousel-item">
+	      <img src="https://www.ngenespanol.com/wp-content/uploads/2018/08/En-este-país-volverán-haber-cines-comerciales-después-de-30-años-1280x720.jpg" alt="New York" width="1100" height="500">
+	    </div>
+	  </div>
+	  
+	  <!-- Left and right controls -->
+	  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+	    <span class="carousel-control-prev-icon"></span>
+	  </a>
+	  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+	    <span class="carousel-control-next-icon"></span>
+	  </a>
+	</div>
+	
+	</div>
+		<div th:replace="footer"/>
 	</body>
 </html>
